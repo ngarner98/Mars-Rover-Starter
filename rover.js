@@ -1,11 +1,11 @@
 class Rover {
-   
    // Write code here!
    constructor(position) {
       this.mode = 'NORMAL';
       this.generatorWatts = 110;
       this.position = position;
    };
+
    receiveMessage(message) {
       let response = {
          message: message.name,
@@ -32,7 +32,6 @@ class Rover {
             };
             response.results.push(result);
          }
-         
          else if(message.commands[i].commandType === "MODE_CHANGE") {  //if its the MODE_CHANGE command
             this.mode = message.commands[i].value; //Current mode is updated by mode change
             let result = {
